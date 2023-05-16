@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-up for life</title>
+</head>
+<body>
+    <form class="container">
+        <div class="form__image">
+            <p>
+               Photo by <a href="https://unsplash.com/@brunoramoslara?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bruno Ramos Lara</a> on <a href="https://unsplash.com/photos/sz3AWACktLc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </p>
+        </div>
+        <div class="form__info">
+            <section class="form__info-intro">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad labore nihil ipsa laborum necessitatibus neque nam, quasi, voluptatum ea tempora, inventore dolorem dicta. Necessitatibus atque soluta optio vero alias voluptatum.
+                Accusamus, quasi. Pariatur hic, consectetur minus ad dignissimos voluptatem impedit officiis maxime laboriosam eveniet, quaerat, repellendus eaque placeat porro aperiam distinctio nobis! Beatae placeat at quaerat aliquid blanditiis expedita ipsum!
+                </p>
+            </section>
+            <fieldset>
+                <legend>Let's get to it!</legend>
+                <p>
+                    <label for="name">first name: <span class="required">*</span></label>
+                    <input type="text" name="name" id="name" required>
+                </p>
+                <p>
+                    <label for="surname">last name: <span class="required">*</span></label>
+                    <input type="text" name="surname" id="surname" required>
+                </p>
+                <p>
+                    <label for="email">e-mail: <span class="required">*</span></label>
+                    <input type="email" name="email" id="email" required>
+                </p>
+                <p>
+                    <label for="phone">phone number:</label>
+                    <input type="text" minlength="9" maxlength="9" name="phone" id="phone">
+                </p>
+                <p>
+                    <label for="psw">password: <span class="required">*</span></label>
+                    <input type="password" name="password" id="psw" required>
+                </p>
+                <p>
+                    <label for="psw-conf">confirm password: <span class="required">*</span></label>
+                    <input type="password" name="password" id="psw-conf" required>
+                </p>
+            </fieldset>
+            <section class="confirm">
+                <button>Create Account</button>
+                <p>Already have an acount? <a href="#">Log in!</a></p>
+            </section>
+        </div>
+    </form>
+</body>
+</html>
