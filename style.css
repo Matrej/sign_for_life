@@ -1,150 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *, *::before, *::after {
-    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+:root {
+    --color-main: #9dbdba;
+    --color-bg: #fff;
+    --color-text: #171818;
+    --color-accent: #ec6a52;
+    --color-btn: var(--color-main);
+    --color-btn-text: var(--color-bg);
+    /* --color-accent: #9dbdba,#f3b7ad,#93aec1,#ec6a52,#f8b042; */
+}
+body.dark-mode {
+    --color-main:hsl(174, 20%, 5%);
+    --color-bg: hsl(177, 21%, 16%);
+    --color-text: #eeeeee;
+    --color-accent:#f8b042;
+    --color-btn: var(--color-accent);
+    --color-btn-text: var(--color-main);
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-form {
-    background-color: white;
+    background-color: var(--color-main);
+    color:var(--color-text);
+    font-family: "Roboto", sans-serif;
     min-height: 100vh;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2rem; */
+}
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover, a:focus {
+    color: #9dbdba;
 }
 
-.form__image {
-    position: relative;
+.image {
     background-image: url(img/img-medium.jpg);
     background-size: cover;
     width: 100%;
-    min-height: 50vh;
+    min-height: 30vh;
+    justify-self: flex-start;
+    padding: 2rem;
 }
-.form__image p {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 10px 15px;
+.image p {
     display: inline-block;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    padding: 8px;
+    color: #eeeeee;
+    line-height: 1.5;
 }
-.form__image>p>a {
-    color: aqua;
-    text-decoration: none;
-}
-.form__info-intro {
-    background-color: aliceblue;
-    padding: 2rem 0;
-}
-.row {
+
+main {
+    max-width: 1200px;
+    min-height: calc(100vh);
+    width: 100%;
+    background-color: var(--color-bg);
+    box-shadow: 0px 30px 40px 20px hsla(0, 0%, 0%, 0.2);
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
 }
-fieldset p {
-    flex-grow: 1;
-    flex-basis: 100%;
-    position: relative;
-}
-
-label {
-    position: absolute;
-    left: 15px;
-    top: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8rem;
-}
-input {
-    padding: 35px 15px 15px 15px;
-    width: 100%;
-    min-height: 50px;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    /* border: 1px solid gray; */
-}
-input:valid{
-    border: 2px solid green;
-}
-
-input:invalid {
-    border: 2px solid red;
-}
-
-input:focus, input:hover {
-    /* border: 2px solid red; */
-    stroke: 2px solid rgb(56, 18, 18);
-    /* background: rgb(161, 182, 182); */
-    /* color: white; */
-    /* box-shadow: 0 8px 10px 0px lightgray; */
-    /* padding-top: 40px; */
-
-}
-input:hover {
-    background: rgb(247, 247, 247);
-    color: inherit;
-    /* box-shadow: 0 5px 0px 0px gray; */
-}
-/* label:has(+ input:focus, + input:hover){
-    color: white;
-    font-weight: 800;
-    background-color: rgb(0, 0, 0);
-    padding: 5px 15px;
-    top: 0;
-    left: 0;
-    width: 100%;
-} */
-input:empty {
-    stroke: 2px solid rgb(197, 197, 197);
-}
-
 fieldset {
     border: 0;
-    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(50px * 8);
 }
 legend {
+    font-family: "Poppins";
     font-size: 2rem;
-    margin-bottom: 2rem;
+    font-weight: 700;
+    margin-bottom: 1em;
 }
 
-@media (min-width: 775px) {
-    fieldset p {
-        flex-basis: 45%;
-    }
-    form {
-        /* width: 90%; */
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: stretch;
-    }
-    .form__info {
-        flex-basis: 50vw;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
-        /* align-items: stretch; */
-        min-height: 100vh;
-    }
-    .form__image {
-        position: relative;
-        background-image: url(img/img-medium.jpg);
-        background-size: cover;
-        flex-basis: min(400px, 40vw);
-        /* height: 100vh; */
-        /* min-height: 50vh; */
-    }
-    input {
-        padding: 24px 8px 8px 15px;;
-    }
+.input-wrapper {
+    position: relative;
+    height: 37px;
+}
+.input-wrapper input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid var(--color-accent);
+    background:none;
+    color: var(--color-text);
+    font-size: 1.25rem;
+}
+input.active + label {
+    top: -4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.input-wrapper label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s;
+}
+.wrapper {
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+button {
+    background-color: var(--color-btn);
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    color: var(--color-btn-text);
+    margin: 2em 0;
+}
+button:hover {
+    background-color: white;
+    color: #000;
+    border: 2px solid #eee;
+}
+p + button {
+    margin-left: 1rem;
+}
+
+
+@media (min-width: 500px) {
+    main {
+        padding: 2rem;
+    }
+    .image {
+        border-radius: 1rem;
+    }
+    .wrapper {
+        padding: 0.5rem;
+    }
+}
+@media (min-width: 650px) {
+    main {
+        min-height: min(600px, calc(100vh - 4rem));
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2rem;
+        border-radius: 2rem;
+    }
+    body {padding: 2rem;}
+    .image {
+        width: 50%;
+    }
+    .wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
 }
